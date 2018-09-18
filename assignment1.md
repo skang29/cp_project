@@ -108,7 +108,7 @@ b = im1(blue(1):2:end, blue(2):2:end);
 ```
 Correct Bayer Pattern: RGGB
 ```
-![Alt text](/assignment1/figure1.png)
+![Alt text](/assignment1_result/figure1.png)
 
 
 ### Question 4. White balancing (20pts)
@@ -149,7 +149,7 @@ imshow(min(1, im_rgb * 5));
 ```
 
 **Results**
-![Alt text](/assignment1/figure2.png)
+![Alt text](/assignment1_result/figure2.png)
 
 ### Question 5. Demosaicing (25pts)
 ```matlab
@@ -164,7 +164,7 @@ title('Demosaicing');
 ```
 
 **Results**
-![Alt text](/assignment1/figure3.png)
+![Alt text](/assignment1_result/figure3.png)
 
 ### Question 6. Brightness adjustment and gamma correction (20pts)
 ```matlab
@@ -188,7 +188,7 @@ end
 ```
 
 **Results**
-![Alt text](/assignment1/figure4.png)
+![Alt text](/assignment1_result/figure4.png)
 
 ### Question 7. Compression (5pts)
 ```matlab
@@ -199,8 +199,8 @@ disp(imfinfo('result_jpg.jpg'));
 ```
 
 **Results**
-![Alt text](/assignment1/result_png.png)
-![Alt text](/assignment1/result_jpg.jpg)
+![Alt text](/assignment1_result/result_png.png)
+![Alt text](/assignment1_result/result_jpg.jpg)
 
 ```
 
