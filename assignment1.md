@@ -1,29 +1,16 @@
-## Welcome to GitHub Pages
+## Assignment 1
+### Question 1. Initials(5pts)
 
-You can use the [editor on GitHub](https://github.com/skang29/cp_project/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+```matlab
+% As the image is represented using Bayer Pattern,
+% original image size is [im1, im2]
+imSize = size(im1);
+disp("Image information");
+fprintf("Image size: %d x %d\n", imSize(1), imSize(2));
+fprintf("Datatype: uint16\n");
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+% Convert image into double precision array
+im1 = cast(im1, 'double');
 ```
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
