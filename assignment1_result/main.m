@@ -140,7 +140,7 @@ figure;
 max_gray = max(max(rgb2gray(im_rgb)));
 for i=0:8
     % Bright adjustment
-    im_bright_adj = im_rgb * (1 + i * 0.01);
+    im_bright_adj = im_rgb * (1 + i);
     adj_max_gray = max(max(rgb2gray(im_bright_adj)));
     
     % Gamma correction
@@ -151,8 +151,20 @@ for i=0:8
     
     subplot(3, 3, i+1);
     imshow(im_bright_adj);
-    title(sprintf('Bright: %.2f%%', adj_max_gray / max_gray * 100));
+    title(sprintf('M: %d, Bright: %.2f%%', i + 1, adj_max_gray / max_gray * 100));
 end
+
+% Select multiplier 4
+% Bright adjustment
+i = 4;
+im_bright_adj = im_rgb * (1 + i);
+adj_max_gray = max(max(rgb2gray(im_bright_adj)));
+
+% Gamma correction
+temp = (1 + 0.055) * power(im_bright_adj, 1/2.4) - 0.055;
+im_bright_adj(im_bright_adj >= 0.0031308) = temp(im_bright_adj >= 0.0031308);
+temp = 12.92 * im_bright_adj;
+im_bright_adj(im_bright_adj < 0.0031308) = temp(im_bright_adj < 0.0031308);
 
 %% Question 7. Compression (5pts)
 
@@ -161,3 +173,17 @@ imwrite(im_bright_adj, 'result_jpg.jpg', 'jpg', 'Quality', 95);
 disp(imfinfo('result_png.png'));
 disp(imfinfo('result_jpg.jpg'));
 
+
+figure;
+for i=10:10:90
+    subplot(3, 3, i / 10);
+    imwrite(im_bright_adj, sprintf('q_%d.jpg', i), 'jpg', 'Quality', i);
+    im_read = imread(sprintf('q_%d.jpg', i));
+    im_read = cast(im_read, 'double');
+    im_read = im_read / 255;
+    im_diff = abs(im_read - im_bright_adj);
+    imshow(im_diff);
+    diff = mean(mean(im_diff));
+    title(sprintf('Q: %d, Diff: %.2f', i, diff*100));
+end
+    
