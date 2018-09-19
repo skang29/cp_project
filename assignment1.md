@@ -196,11 +196,25 @@ imwrite(im_bright_adj, 'result_png.png');
 imwrite(im_bright_adj, 'result_jpg.jpg', 'jpg', 'Quality', 95);
 disp(imfinfo('result_png.png'));
 disp(imfinfo('result_jpg.jpg'));
+
+figure;
+for i=10:10:90
+    subplot(3, 3, i / 10);
+    imwrite(im_bright_adj, sprintf('q_%d.jpg', i), 'jpg', 'Quality', i);
+    im_read = imread(sprintf('q_%d.jpg', i));
+    im_read = cast(im_read, 'double');
+    im_read = im_read / 255;
+    im_diff = abs(im_read - im_bright_adj);
+    imshow(im_diff);
+    diff = mean(mean(im_diff));
+    title(sprintf('Q: %d, Diff: %.2f', i, diff*100));
+end
 ```
 
 **Results**
 ![Alt text](/assignment1_result/result_png.png)
 ![Alt text](/assignment1_result/result_jpg.jpg)
+![Alt text](/assignment1_result/figure5.png)
 
 ```
 
