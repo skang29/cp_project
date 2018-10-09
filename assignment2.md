@@ -71,7 +71,7 @@ disp('Done !');
 ```
 
 **Results**
-![Alt text](/assignment2_result/figure1.png)
+![Alt text](/assignment2_result/Figure/figure1.png)
 
 ### Q2. Laplacian pyramid (20 pts)
 ```matlab
@@ -95,7 +95,7 @@ disp('Done !');
 ```
 
 **Results**
-![Alt text](/assignment2_result/figure2.png)
+![Alt text](/assignment2_result/Figure/figure2.png)
 
 ### Q3. Temporal filtering (30 pts), Q4. Extracting the frequency band of interest (30 pts)
 ```matlab
@@ -207,8 +207,8 @@ disp('Done !');
 ```
 
 **Results**
-![Alt text](/assignment1_result/figure4.png)
-![Alt text](/assignment1_result/figure3.png)
+![Alt text](/assignment2_result/Figure/figure4.png)
+![Alt text](/assignment2_result/Figure/figure3.png)
 
 
 ### Q5. Image reconstruction (20 pts)
@@ -261,4 +261,14 @@ disp('All process finished.');
 ```
 
 **Results**
-![Alt text](/assignment1_result/figure2.png)
+<div align="center">
+  <a href="https://www.youtube.com/watch?v=NSufEH1AI3o"><img src="https://img.youtube.com/vi/NSufEH1AI3o/0.jpg" alt="IMAGE ALT TEXT"></a>
+</div>
+
+<div align="center">
+  <a href="https://www.youtube.com/watch?v=RFR_mHK_9eo"><img src="https://img.youtube.com/vi/RFR_mHK_9eo/0.jpg" alt="IMAGE ALT TEXT"></a>
+</div>
+
+<div align="center">
+  <a href="https://www.youtube.com/watch?v=LgpJuGK6ZcY"><img src="https://img.youtube.com/vi/LgpJuGK6ZcY/0.jpg" alt="IMAGE ALT TEXT"></a>
+</div>
