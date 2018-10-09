@@ -282,7 +282,7 @@ Failure case
 </div>
 
 ### BONUS. My Own Video
-I took a video of my hand. A figure below is displaying sum of fourier transformed frame data. As the figure shows, amplitude between 0.75Hz and 1.00Hz is informative in consideration that low frequency is not meaningful. Thus, I amplified my video using BW bandpass filter which passing frequency is 0.75~1.00Hz and I successfully amplified my hands color shift due to my heart beat. 0.75Hz~1.00Hz indicates 60~80bps which is the general heart beat rate of a human.
+I took a video of my hand. A figure below is displaying sum of fourier transformed frame data. As the figure shows, amplitude between 0.75Hz and 1.00Hz is informative in consideration that low frequency is not meaningful. Thus, I amplified my video using BW bandpass filter which passing frequency is 0.7-1.00Hz and I successfully amplified my hands color shift due to my heart beat. 0.75Hz-1.00Hz indicates 60-80bps which is the general heart beat rate of a human.
 
 **Results**
 Original
