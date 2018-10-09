@@ -1,6 +1,6 @@
 ## Assignment 2
 ### Experimental settings
-#####Image resizing
+#### Image resizing
 Because of limitation of RAM, I resized image to specific width and height as power of 2.
 
 ### Q1. Initials and color transformation (5 pts)
