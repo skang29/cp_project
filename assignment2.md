@@ -265,14 +265,33 @@ disp('All process finished.');
 ```
 
 **Results**
+Face
 <div align="center">
   <a href="https://www.youtube.com/watch?v=NSufEH1AI3o"><img src="https://img.youtube.com/vi/NSufEH1AI3o/0.jpg" alt="IMAGE ALT TEXT"></a>
 </div>
 
+
+Baby
 <div align="center">
   <a href="https://www.youtube.com/watch?v=RFR_mHK_9eo"><img src="https://img.youtube.com/vi/RFR_mHK_9eo/0.jpg" alt="IMAGE ALT TEXT"></a>
 </div>
 
+Failure case
 <div align="center">
   <a href="https://www.youtube.com/watch?v=LgpJuGK6ZcY"><img src="https://img.youtube.com/vi/LgpJuGK6ZcY/0.jpg" alt="IMAGE ALT TEXT"></a>
+</div>
+
+### BONUS. My Own Video
+I took a video of my hand. A figure below is displaying sum of fourier transformed frame data. As the figure shows, amplitude between 0.75Hz and 1.00Hz is informative in consideration that low frequency is not meaningful. Thus, I amplified my video using BW bandpass filter which passing frequency is 0.75~1.00Hz and I successfully amplified my hands color shift due to my heart beat. 0.75Hz~1.00Hz indicates 60~80bps which is the general heart beat rate of a human.
+
+**Results**
+Original
+<div align="center">
+  <a href="https://www.youtube.com/watch?v=cOUpuEkFAE0"><img src="https://img.youtube.com/vi/cOUpuEkFAE0/0.jpg" alt="IMAGE ALT TEXT"></a>
+</div>
+
+
+Amplified
+<div align="center">
+  <a href="https://www.youtube.com/watch?v=BYtgJRo1Mwk"><img src="https://img.youtube.com/vi/BYtgJRo1Mwk/0.jpg" alt="IMAGE ALT TEXT"></a>
 </div>
