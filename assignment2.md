@@ -5,6 +5,9 @@ Because of limitation of RAM, I resized image to specific width and height as po
 
 ### Q1. Initials and color transformation (5 pts)
 
+After reading video file, I cast video file to double datatype and re-range the video frame to 0 to 1. Finally, video frame is converted to YIQ color space.
+Figure 1 is showing each results.
+
 ```matlab
 %% Q1. Initials and color transformation (5 pts)
 disp('Q1. Initials and color transformation (5 pts) ...');
@@ -78,6 +81,8 @@ disp('Done !');
 ![Alt text](/assignment2_result/Figure/figure1.png)
 
 ### Q2. Laplacian pyramid (20 pts)
+I implemented laplacian pyramid functions outside the main matlab code. I appended each level of laplacian pyramid image to one for visualization.
+
 ```matlab
 %% Q2. Laplacian pyramid (20 pts)
 disp('Q2. Laplacian pyramid (20 pts) ...');
@@ -102,6 +107,7 @@ disp('Done !');
 ![Alt text](/assignment2_result/Figure/figure2.png)
 
 ### Q3. Temporal filtering (30 pts), Q4. Extracting the frequency band of interest (30 pts)
+Using FFT, I transformed frames to frequency domain and applied BW bandpass filter to extract the frequency band of interest. After amplifing the frequency band, I added the amplified signal to original signal.
 ```matlab
 disp('Q3. Temporal filtering (30 pts) AND');
 disp('Q4. Extracting the frequency band of interest (30 pts) ...');
