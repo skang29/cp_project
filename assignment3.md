@@ -137,6 +137,9 @@ Authors introduced non-photorealistic rendering in the paper and its result attr
 
 ![a](/assignment3_result/results/Q5/paper_equations.png)
 
+
+
+**Result image**
 ![a](/assignment3_result/results/Q5/result.png)
 
 
