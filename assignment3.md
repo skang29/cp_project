@@ -76,7 +76,7 @@ A little change in least squares problem, I could obtain a mixed gradients blend
 
 **Result image**
 
-![](/assignment3_result/results/Q3/Q3_poisson_blended_image.png)
+![](/assignment3_result/results/Q3/Q3_mixed_gradient_blended_image.png)
 
 
 Mixed gradient blending utilizes gradient of max value of both target and source images. This blends styles of two images and sometimes makes the image more natural. However, it shows more pale results compared to Poisson blending. Further examples are listed in Q4.
@@ -84,3 +84,50 @@ Mixed gradient blending utilizes gradient of max value of both target and source
 
 
 ### Q4. My own examples (20 pts)
+
+#### Example 1. ####
+
+![](/assignment3_result/results/Q4/1/figure1.png)
+
+**Poisson blending**
+![](/assignment3_result/results/Q4/1/1_poisson.png)
+
+**Mixed gradient blending**
+![](/assignment3_result/results/Q4/1/1_mixed_gradient.png)
+
+
+Basketball in target image has more high frequency components compared to background. Thus, mixed gradient blending shows more natural result. However, mixed gradient blending shows more blurry edges compared to Poisson blending.
+
+
+#### Example 2. ####
+
+![](/assignment3_result/results/Q4/3/figure1.png)
+
+**Poisson blending**
+![](/assignment3_result/results/Q4/3/1_poisson.png)
+
+**Mixed gradient blending**
+![](/assignment3_result/results/Q4/3/1_mixed_gradient.png)
+
+
+In this case, mixed gradient blending shows noticeable results. Poisson blended image shows thick edge line which makes image unnatural. Mixed gradient method utilizes high frequency components of target image which reduces seam of edge.
+
+
+#### Example 3. ####
+
+![](/assignment3_result/results/Q4/2/figure1.png)
+
+**Poisson blending**
+![](/assignment3_result/results/Q4/2/1_poisson.png)
+
+**Mixed gradient blending**
+![](/assignment3_result/results/Q4/2/1_mixed_gradient.png)
+
+
+In this case, style between target and source image is considerably different. For Poisson blending, it shows unnatural edge. For mixed gradient blending, the source image lost its information.
+
+
+
+### Q5. Bonus: Implement a different gradient-domain processing algorithm (Up to 50 pts)
+
+
