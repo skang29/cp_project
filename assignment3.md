@@ -101,13 +101,13 @@ Basketball in target image has more high frequency components compared to backgr
 
 #### Example 2. ####
 
-![](/assignment3_result/results/Q4/3/figure1.png)
+![](/assignment3_result/results/Q4/3/figure3.png)
 
 **Poisson blending**
-![](/assignment3_result/results/Q4/3/1_poisson.png)
+![](/assignment3_result/results/Q4/3/3_poisson.png)
 
 **Mixed gradient blending**
-![](/assignment3_result/results/Q4/3/1_mixed_gradient.png)
+![](/assignment3_result/results/Q4/3/3_mixed_gradient.png)
 
 
 In this case, mixed gradient blending shows noticeable results. Poisson blended image shows thick edge line which makes image unnatural. Mixed gradient method utilizes high frequency components of target image which reduces seam of edge.
@@ -115,16 +115,18 @@ In this case, mixed gradient blending shows noticeable results. Poisson blended 
 
 #### Example 3. ####
 
-![](/assignment3_result/results/Q4/2/figure1.png)
+![](/assignment3_result/results/Q4/2/figure2.png)
 
 **Poisson blending**
-![](/assignment3_result/results/Q4/2/1_poisson.png)
+![](/assignment3_result/results/Q4/2/2_poisson.png)
 
 **Mixed gradient blending**
-![](/assignment3_result/results/Q4/2/1_mixed_gradient.png)
+![](/assignment3_result/results/Q4/2/2_mixed_gradient.png)
 
 
 In this case, style between target and source image is considerably different. For Poisson blending, it shows unnatural edge. For mixed gradient blending, the source image lost its information.
+
+
 
 
 
