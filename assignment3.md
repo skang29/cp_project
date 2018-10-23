@@ -60,3 +60,9 @@ Using LMS solver of MATLAB, I obtained blended image.
 **Result image**
 
 ![](/assignment3_result/results/Q2/Q2_blended_image.png)
+
+
+As shown in Fig. 4, edge of blended image is not natural for some area. The LMS solver finds global minimum point, however, the error is not exactly 0. Applying alpha blending near the edge would reduce seam.
+
+
+
