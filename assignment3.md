@@ -1,4 +1,4 @@
-## Assignment 2
+## Assignment 3
 ### Q1. Toy problem (20 pts)
 
 The goal of this work is to reconstruct image using only gradients and a pixel of original image. As shown in Fig. 1, I calculated gradients of each H and W directions using simple gradient formula.
@@ -14,7 +14,7 @@ The difference between input image and reconstructed image is **8.3554e-12** whi
 
 ![Alt text](/assignment3_result/results/Q1/figure/figure1.png)
 
-### Q2. Laplacian pyramid (20 pts)
+### Q2. Poisson blending (50 pts)
 
 Before blending, I preprocessed given images using photoshop. I copy and pasted source images to a empty alpha channel enabled image which size is same as target image. Also, I made masks using eraser in photoshop to prepare blending.
 
@@ -65,4 +65,22 @@ Using LMS solver of MATLAB, I obtained blended image.
 As shown in Fig. 4, edge of blended image is not natural for some area. The LMS solver finds global minimum point, however, the error is not exactly 0. Applying alpha blending near the edge would reduce seam.
 
 
+### Q3. Blending with mixed gradients (10 pts)
 
+A little change in least squares problem, I could obtain a mixed gradients blending result. Fig. 6 shows both Poisson blending and mixed gradient blending.
+
+**Figure 6**
+
+![](/assignment3_result/results/Q3/figure/figure1.png)
+
+
+**Result image**
+
+![](/assignment3_result/results/Q3/Q3_poisson_blended_image.png)
+
+
+Mixed gradient blending utilizes gradient of max value of both target and source images. This blends styles of two images and sometimes makes the image more natural. However, it shows more pale results compared to Poisson blending. Further examples are listed in Q4.
+
+
+
+### Q4. My own examples (20 pts)
