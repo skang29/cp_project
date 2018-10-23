@@ -10,13 +10,16 @@ The goal of this work is to reconstruct image using only gradients and a pixel o
 After calculating gradients, I reconstructed image using LSE solver of MATLAB.
 The difference between input image and reconstructed image is **8.3554e-12** which means the reconstruction is successful.
 
+
 **Figure 1**
 
 ![Alt text](/assignment3_result/results/Q1/figure/figure1.png)
 
+
 ### Q2. Poisson blending (50 pts)
 
 Before blending, I preprocessed given images using photoshop. I copy and pasted source images to a empty alpha channel enabled image which size is same as target image. Also, I made masks using eraser in photoshop to prepare blending.
+
 
 **Figure 2**
 
@@ -41,6 +44,7 @@ M_penguin(alpha > 0) = 1;
 
 Fig. 4 shows target image, copy and pasted image and two bounding box. I obtained sub-target image which is designated position to be blended and I draw red rectangle of the area.
 
+
 **Figure 4**
 
 ![a](/assignment3_result/results/Q2/figure/figure2.png)
@@ -51,6 +55,7 @@ Fig. 4 shows target image, copy and pasted image and two bounding box. I obtaine
 
 
 Using LMS solver of MATLAB, I obtained blended image.
+
 
 **Figure 5**
 
@@ -68,6 +73,7 @@ As shown in Fig. 4, edge of blended image is not natural for some area. The LMS 
 ### Q3. Blending with mixed gradients (10 pts)
 
 A little change in least squares problem, I could obtain a mixed gradients blending result. Fig. 6 shows both Poisson blending and mixed gradient blending.
+
 
 **Figure 6**
 
@@ -89,10 +95,14 @@ Mixed gradient blending utilizes gradient of max value of both target and source
 
 ![a](/assignment3_result/results/Q4/1/figure1.png)
 
+
 **Poisson blending**
+
 ![a](/assignment3_result/results/Q4/1/1_poisson.png)
 
+
 **Mixed gradient blending**
+
 ![a](/assignment3_result/results/Q4/1/1_mixed_gradient.png)
 
 
@@ -103,10 +113,14 @@ Basketball in target image has more high frequency components compared to backgr
 
 ![a](/assignment3_result/results/Q4/3/figure3.png)
 
+
 **Poisson blending**
+
 ![a](/assignment3_result/results/Q4/3/3_poisson.png)
 
+
 **Mixed gradient blending**
+
 ![a](/assignment3_result/results/Q4/3/3_mixed_gradient.png)
 
 
@@ -117,10 +131,14 @@ In this case, mixed gradient blending shows noticeable results. Poisson blended 
 
 ![a](/assignment3_result/results/Q4/2/figure2.png)
 
+
 **Poisson blending**
+
 ![a](/assignment3_result/results/Q4/2/2_poisson.png)
 
+
 **Mixed gradient blending**
+
 ![a](/assignment3_result/results/Q4/2/2_mixed_gradient.png)
 
 
@@ -140,8 +158,10 @@ Authors introduced non-photorealistic rendering in the paper and its result attr
 
 
 **Result image**
+
 ![a](/assignment3_result/results/Q5/result.png)
 
 
 ### Trick or treat!
+
 ![a](/assignment3_result/results/Q5/failure_case.png)
