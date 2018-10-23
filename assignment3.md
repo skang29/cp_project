@@ -20,8 +20,8 @@ Before blending, I preprocessed given images using photoshop. I copy and pasted 
 
 **Figure 2**
 
-![](/assignment3_result/data/preprocessed/chick_original.png)
-![](/assignment3_result/data/preprocessed/chick.png)
+![a](/assignment3_result/data/preprocessed/chick_original.png)
+![a](/assignment3_result/data/preprocessed/chick.png)
 
 
 Using these images, I made image mask using alpha channel.
@@ -36,30 +36,30 @@ M_penguin(alpha > 0) = 1;
 
 **Figure 3**
 
-![](/assignment3_result/results/Q2/figure/figure1.png)
+![a](/assignment3_result/results/Q2/figure/figure1.png)
 
 
 Fig. 4 shows target image, copy and pasted image and two bounding box. I obtained sub-target image which is designated position to be blended and I draw red rectangle of the area.
 
 **Figure 4**
 
-![](/assignment3_result/results/Q2/figure/figure2.png)
+![a](/assignment3_result/results/Q2/figure/figure2.png)
 
-![](/assignment3_result/results/Q2/figure/figure3.png)
+![a](/assignment3_result/results/Q2/figure/figure3.png)
 
-![](/assignment3_result/results/Q2/figure/figure4.png)
+![a](/assignment3_result/results/Q2/figure/figure4.png)
 
 
 Using LMS solver of MATLAB, I obtained blended image.
 
 **Figure 5**
 
-![](/assignment3_result/results/Q2/figure/figure5.png)
+![a](/assignment3_result/results/Q2/figure/figure5.png)
 
 
 **Result image**
 
-![](/assignment3_result/results/Q2/Q2_blended_image.png)
+![a](/assignment3_result/results/Q2/Q2_blended_image.png)
 
 
 As shown in Fig. 4, edge of blended image is not natural for some area. The LMS solver finds global minimum point, however, the error is not exactly 0. Applying alpha blending near the edge would reduce seam.
@@ -71,12 +71,12 @@ A little change in least squares problem, I could obtain a mixed gradients blend
 
 **Figure 6**
 
-![](/assignment3_result/results/Q3/figure/figure1.png)
+![a](/assignment3_result/results/Q3/figure/figure1.png)
 
 
 **Result image**
 
-![](/assignment3_result/results/Q3/Q3_mixed_gradient_blended_image.png)
+![a](/assignment3_result/results/Q3/Q3_mixed_gradient_blended_image.png)
 
 
 Mixed gradient blending utilizes gradient of max value of both target and source images. This blends styles of two images and sometimes makes the image more natural. However, it shows more pale results compared to Poisson blending. Further examples are listed in Q4.
@@ -87,13 +87,13 @@ Mixed gradient blending utilizes gradient of max value of both target and source
 
 #### Example 1. ####
 
-![](/assignment3_result/results/Q4/1/figure1.png)
+![a](/assignment3_result/results/Q4/1/figure1.png)
 
 **Poisson blending**
-![](/assignment3_result/results/Q4/1/1_poisson.png)
+![a](/assignment3_result/results/Q4/1/1_poisson.png)
 
 **Mixed gradient blending**
-![](/assignment3_result/results/Q4/1/1_mixed_gradient.png)
+![a](/assignment3_result/results/Q4/1/1_mixed_gradient.png)
 
 
 Basketball in target image has more high frequency components compared to background. Thus, mixed gradient blending shows more natural result. However, mixed gradient blending shows more blurry edges compared to Poisson blending.
@@ -101,13 +101,13 @@ Basketball in target image has more high frequency components compared to backgr
 
 #### Example 2. ####
 
-![](/assignment3_result/results/Q4/3/figure3.png)
+![a](/assignment3_result/results/Q4/3/figure3.png)
 
 **Poisson blending**
-![](/assignment3_result/results/Q4/3/3_poisson.png)
+![a](/assignment3_result/results/Q4/3/3_poisson.png)
 
 **Mixed gradient blending**
-![](/assignment3_result/results/Q4/3/3_mixed_gradient.png)
+![a](/assignment3_result/results/Q4/3/3_mixed_gradient.png)
 
 
 In this case, mixed gradient blending shows noticeable results. Poisson blended image shows thick edge line which makes image unnatural. Mixed gradient method utilizes high frequency components of target image which reduces seam of edge.
@@ -115,13 +115,13 @@ In this case, mixed gradient blending shows noticeable results. Poisson blended 
 
 #### Example 3. ####
 
-![](/assignment3_result/results/Q4/2/figure2.png)
+![a](/assignment3_result/results/Q4/2/figure2.png)
 
 **Poisson blending**
-![](/assignment3_result/results/Q4/2/2_poisson.png)
+![a](/assignment3_result/results/Q4/2/2_poisson.png)
 
 **Mixed gradient blending**
-![](/assignment3_result/results/Q4/2/2_mixed_gradient.png)
+![a](/assignment3_result/results/Q4/2/2_mixed_gradient.png)
 
 
 In this case, style between target and source image is considerably different. For Poisson blending, it shows unnatural edge. For mixed gradient blending, the source image lost its information.
@@ -129,7 +129,6 @@ In this case, style between target and source image is considerably different. F
 
 
 
-
 ### Q5. Bonus: Implement a different gradient-domain processing algorithm (Up to 50 pts)
 
-
+Authors introduced non-photorealistic rendering in the paper and its result attracted the most. I implemented NPR filter using LMS solver of MATLAB.
