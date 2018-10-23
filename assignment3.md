@@ -132,3 +132,13 @@ In this case, style between target and source image is considerably different. F
 ### Q5. Bonus: Implement a different gradient-domain processing algorithm (Up to 50 pts)
 
 Authors introduced non-photorealistic rendering in the paper and its result attracted the most. I implemented NPR filter using LMS solver of MATLAB.
+
+![a](/assignment3_result/results/Q5/paper_figure.png)
+
+![a](/assignment3_result/results/Q5/paper_equations.png)
+
+![a](/assignment3_result/results/Q5/result.png)
+
+
+### Trick or treat!
+![a](/assignment3_result/results/Q5/failure_case.png)
