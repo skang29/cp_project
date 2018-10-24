@@ -1,3 +1,10 @@
+## You can find whole code from here
+
+https://github.com/skang29/cp_project/tree/master/assignment3_result
+
+I didn't add whole code to this report because of limited space.
+
+
 ## Assignment 3
 ### Q1. Toy problem (20 pts)
 
