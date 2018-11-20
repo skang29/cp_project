@@ -110,3 +110,30 @@ After merging exposure stacks to HDR images, I evaluated the quality of HDR merg
 
 **Figure 5: Linear regression results**
 ![Alt text](/assignment4_result/results/Q2_HDR/linear_regression.png)
+
+
+
+
+### Q2. Tonemapping (50 pts)
+#### Sub Q1. Photographic tonemapping (20 pts)
+  Following given equation which is shown below, I got two photographic tonemapped images. First one is tonemapped channelwisely in RGB colorspace. Second one is tonemapped using only Y channel in xyY colorspace. In my view, photographic tonemapping using `RGB colorspace` is better than `xyY colorspace`. `xyY colorspace` tonemapping somehow changed white balance of the image which makes image unreal.
+  
+  
+![Alt text](/assignment4_result/results/Q3_tonemap/formula.png)
+
+**Figure 6: Tonemapped images**
+![Alt text](/assignment4_result/results/Q3_tonemap/figure.png)
+
+
+**Figure 7: Tonemapped images-RGB**
+![Alt text](/assignment4_result/results/Q3_tonemap/photo_rgb.png)
+
+
+**Figure 8: Tonemapped images-RGB**
+![Alt text](/assignment4_result/results/Q3_tonemap/photo_xyY.png)
+
+
+
+#### Sub Q2. Bilateral tonemapping (20 pts)
+  Following given equation which is shown below, I got two photographic tonemapped images. First one is tonemapped channelwisely in RGB colorspace. Second one is tonemapped using only Y channel in xyY colorspace.
+
