@@ -101,3 +101,12 @@ Merged exposure stacks have 12 types: 2 sets of images (RAW and rendered) x 2 me
 
 **Figure 4-(12): Rendered, Logarithmic, Gaussian**
 ![Alt text](/assignment4_result/results/Q2_HDR/tonemapped_matlab/gaussian_rendered_logarithmic.jpg)
+
+
+
+#### Sub Q3. Evaluation (10 pts)
+After merging exposure stacks to HDR images, I evaluated the quality of HDR merging scheme by measuring its linearity of luminance value. Utilizing patches 4, 8, 12, 16, 20 and 24 of color checkers, I got log luminance intensity of each patch. The results of linear regression are shown in **figure 5**. Every case shows meaningful R-squared value which indicates the error of regression result. Logarithmic merging scheme shows better results in both qualitative and quantitative evaluations.
+
+
+**Figure 5: Linear regression results**
+![Alt text](/assignment4_result/results/Q2_HDR/linear_regression.png)
