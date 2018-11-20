@@ -116,7 +116,16 @@ After merging exposure stacks to HDR images, I evaluated the quality of HDR merg
 
 ### Q2. Tonemapping (50 pts)
 #### Sub Q1. Photographic tonemapping (20 pts)
-  Following given equation which is shown below, I got two photographic tonemapped images. First one is tonemapped channelwisely in RGB colorspace. Second one is tonemapped using only Y channel in xyY colorspace. In my view, photographic tonemapping using `RGB colorspace` is better than `xyY colorspace`. `xyY colorspace` tonemapping somehow changed white balance of the image which makes image unreal.
+  Following given equation which is shown below, I got two photographic tonemapped images. First one is tonemapped channelwisely in RGB colorspace. Second one is tonemapped using only Y channel in xyY colorspace. In my view, photographic tonemapping using `RGB colorspace` is better than `xyY colorspace`. `xyY colorspace` tonemapping somehow changed white balance of the image which makes image unreal. Parameters are shown below.
+```MATLAB
+% Parameters for RGB tonemapping
+K_p = 0.8;
+B_p = 0.9;
+
+% Parameters for xyY tonemapping
+K_y = 0.2;
+B_y = 0.9;
+```
   
   
 ![Alt text](/assignment4_result/results/Q3_tonemap/formula.png)
