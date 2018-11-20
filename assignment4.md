@@ -15,11 +15,89 @@ I didn not add whole code to this report because of limited space.
 
   To achieve optimal `g` curve, I clipped image range to `Zmin` to `Zmax`. I found that adding one condition which is `g(Zmax - 1) = 1` to LS optimization problem results better `g` curve. If I use `g(Zmax) = 1` instead of  `g(Zmax - 1) = 1`, the `g` curve is suppressed to have lower value except `g(Zmax)`. Also, I set `g` values which x is smaller than `Zmin` to zero and the values which x is larger than `Zmax-1` to `g(Zmax-1)`. 
 
-  I chose 1,000 for `lambda`, which strongly enforces the g curve to be smooth. `Figure 1, 2, 3` shows each `g` curve and `exp(g)` curve using `uniform, tent, gaussian` weight scheme for each color channels, respectively. Except linear weight scheme, `g` curve are monotonically increasing function which is considerably smooth. Linear weight scheme uses whole range of image pixels which makes sensitive to saturated values.
+  I chose 1,000 for `lambda`, which strongly enforces the g curve to be smooth. **Figure 1, 2, 3** shows each `g` curve and `exp(g)` curve using `uniform, tent, gaussian` weight scheme for each color channels, respectively. Except linear weight scheme, `g` curve are monotonically increasing function which is considerably smooth. Linear weight scheme uses whole range of image pixels which makes sensitive to saturated values.
 
-**Figure 1**
-
+**Figure 1: Uniform**
 ![Alt text](/assignment4_result/results/Q1_Linearization/uniform.png)
+
+
+**Figure 2: Tent**
 ![Alt text](/assignment4_result/results/Q1_Linearization/tent.png)
+
+
+**Figure 3: Gaussian**
 ![Alt text](/assignment4_result/results/Q1_Linearization/gaussian.png)
 
+
+
+#### Sub Q2. Merge exposure stack into HDR image (15 pts)
+Merged exposure stacks have 12 types: 2 sets of images (RAW and rendered) x 2 merging schemes(linear and logarithmic) x 3 weighting schemes (uniform, tent, Gaussian). I post-processed using `MATLAB` **tonemap** function. In rendered images, some of cases show noisy results. I presume that the reason of noise value is due to clipping saturated value in `Sub Q1`. In my view, logarithmic merging scheme shows better results than linear merging scheme.
+
+**Figure 4-(1): Raw, Linear, Uniform**
+![Alt text](/assignment4_result/results/Q2_HDR/tonemapped_matlab/uniform_raw_linear.jpg)
+
+
+
+
+**Figure 4-(2): Raw, Linear, Tent**
+![Alt text](/assignment4_result/results/Q2_HDR/tonemapped_matlab/tent_raw_linear.jpg)
+
+
+
+
+**Figure 4-(3): Raw, Linear, Gaussian**
+![Alt text](/assignment4_result/results/Q2_HDR/tonemapped_matlab/gaussian_raw_linear.jpg)
+
+
+
+
+**Figure 4-(4): Raw, Logarithmic, Uniform**
+![Alt text](/assignment4_result/results/Q2_HDR/tonemapped_matlab/uniform_raw_logarithmic.jpg)
+
+
+
+
+**Figure 4-(5): Raw, Logarithmic, Tent**
+![Alt text](/assignment4_result/results/Q2_HDR/tonemapped_matlab/tent_raw_logarithmic.jpg)
+
+
+
+
+**Figure 4-(6): Raw, Logarithmic, Gaussian**
+![Alt text](/assignment4_result/results/Q2_HDR/tonemapped_matlab/gaussian_raw_logarithmic.jpg)
+
+
+
+
+**Figure 4-(7): Rendered, Linear, Uniform**
+![Alt text](/assignment4_result/results/Q2_HDR/tonemapped_matlab/uniform_rendered_linear.jpg)
+
+
+
+
+**Figure 4-(8): Rendered, Linear, Tent**
+![Alt text](/assignment4_result/results/Q2_HDR/tonemapped_matlab/tent_rendered_linear.jpg)
+
+
+
+
+**Figure 4-(9): Rendered, Linear, Gaussian**
+![Alt text](/assignment4_result/results/Q2_HDR/tonemapped_matlab/gaussian_rendered_linear.jpg)
+
+
+
+
+**Figure 4-(10): Rendered, Logarithmic, Uniform**
+![Alt text](/assignment4_result/results/Q2_HDR/tonemapped_matlab/uniform_rendered_logarithmic.jpg)
+
+
+
+
+**Figure 4-(11): Rendered, Logarithmic, Tent**
+![Alt text](/assignment4_result/results/Q2_HDR/tonemapped_matlab/tent_rendered_logarithmic.jpg)
+
+
+
+
+**Figure 4-(12): Rendered, Logarithmic, Gaussian**
+![Alt text](/assignment4_result/results/Q2_HDR/tonemapped_matlab/gaussian_rendered_logarithmic.jpg)
