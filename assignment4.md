@@ -9,17 +9,11 @@ I didn not add whole code to this report because of limited space.
 ### Q1. HDR Imaging (50 pts)
 #### Sub Q1. Linearize rendered images (25 pts)
 
-The goal of this work is to linearize rendered image which is non-linear. Before merging images to HDR image, it is necessary to linearize rendered image. To achieve inverse function which linearize non-linear image, I made least squares optimization problem.
+  The goal of this work is to linearize rendered image which is non-linear. Before merging images to HDR image, it is necessary to linearize rendered image. To achieve inverse function which linearize non-linear image, I made least squares optimization problem.
 
 <img src="https://latex.codecogs.com/gif.latex?\min_{g,L_{ij}}&space;\sum_{i,&space;j}&space;\sum_{k}&space;w(I_{ij}^{k})[g(I_{ij}^{k})&space;-&space;log(L_{ij})&space;-&space;log(t^k))]^2&space;&plus;&space;\lambda&space;\sum_{z=0}^{255}&space;w(z)&space;(\nabla^2&space;g(z))^2" title="\min_{g,L_{ij}} \sum_{i, j} \sum_{k} w(I_{ij}^{k})[g(I_{ij}^{k}) - log(L_{ij}) - log(t^k))]^2 + \lambda \sum_{z=0}^{255} w(z) (\nabla^2 g(z))^2" />
 
-
-
-![\Large grad_h(h, w) = image(h+1, w) - image(h, w)](https://latex.codecogs.com/svg.latex?grad_w(h,%20w)%20=%20image(h,%20w+1)%20-%20image(h,%20w))
-
-After calculating gradients, I reconstructed image using LSE solver of MATLAB.
-The difference between input image and reconstructed image is **8.3554e-12** which means the reconstruction is successful.
-
+  I chose 1,000 for `lambda`, which strongly enforces the g curve to be smooth. 
 
 **Figure 1**
 
