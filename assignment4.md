@@ -167,5 +167,5 @@ kernel_size_xyY = 5;
 ![Alt text](/assignment4_result/results/Q3_tonemap/bilateral_rgb.png)
 
 
-**Figure 11: Tonemapped images-RGB**
+**Figure 11: Tonemapped images-xyY**
 ![Alt text](/assignment4_result/results/Q3_tonemap/bilateral_xyY.png)
