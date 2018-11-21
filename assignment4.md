@@ -5,6 +5,19 @@ https://github.com/skang29/cp_project/tree/master/assignment4_result
 I didn not add whole code to this report because of limited space.
 
 
+## Preliminary: Convert nef to tiff image using Python
+```Python
+import rawpy
+import imageio
+
+
+for i in range(16):
+    with rawpy.imread("exposure{}.nef".format(i+1)) as raw:
+        rgb = raw.postprocess(output_color=rawpy.ColorSpace.sRGB, use_camera_wb=True, output_bps=16, demosaic_algorithm=rawpy.DemosaicAlgorithm.LINEAR, no_auto_bright=True)
+        imageio.imsave("results/exposure{}.tiff".format(i+1), rgb)
+```
+
+
 ## Assignment 4
 ### Q1. HDR Imaging (50 pts)
 #### Sub Q1. Linearize rendered images (25 pts)
