@@ -10,7 +10,11 @@ I didn not add whole code to this report because of limited space.
 
   The goal of this work is to preprocess a image which is acquired using plenoptic camera to 5D light field matrix L(u, v, s, t, c). After re-ordering pixels to L(u, v, s, t, c), I could get each pinhole image(sub-aperture view image) which can be expressed by L(u=u0, v=v0, s, t, c). **Fig. 1** shows each pinhole images in 16 by 16 grid view. The image is resized with resize ratio 0.4 due to size limit of github.
   
+  
+  
 **Figure 1: Sub-aperture view**
+
+
 ![Alt text](/assignment5_result/results/Q2_sub_aperture_views/result.png)
 
 
@@ -20,7 +24,11 @@ I didn not add whole code to this report because of limited space.
 
   **Fig. 2** shows several focused images.
   
+  
+  
 **Figure 2: Focused images**
+
+
 ![Alt text](/assignment5_result/results/Q3_refocusing/06_d(-4).png)
 ![Alt text](/assignment5_result/results/Q3_refocusing/10_d(0).png)
 ![Alt text](/assignment5_result/results/Q3_refocusing/14_d(4).png)
@@ -30,101 +38,18 @@ I didn not add whole code to this report because of limited space.
 ![Alt text](/assignment5_result/results/Q3_refocusing/30_d(20).png)
 ![Alt text](/assignment5_result/results/Q3_refocusing/34_d(24).png)
 
-Merged exposure stacks have 12 types: 2 sets of images (RAW and rendered) x 2 merging schemes(linear and logarithmic) x 3 weighting schemes (uniform, tent, Gaussian). I post-processed using `MATLAB` **tonemap** function. In rendered images, some of cases show noisy results. I presume that the reason of noise value is due to clipping saturated value in `Sub Q1`. In my view, logarithmic merging scheme shows better results than linear merging scheme.
 
-**Figure 4-(1): Raw, Linear, Uniform**
-![Alt text](/assignment4_result/results/Q2_HDR/tonemapped_matlab/uniform_raw_linear.jpg)
-
-
-
-
-**Figure 4-(2): Raw, Linear, Tent**
-![Alt text](/assignment4_result/results/Q2_HDR/tonemapped_matlab/tent_raw_linear.jpg)
-
-
-
-
-**Figure 4-(3): Raw, Linear, Gaussian**
-![Alt text](/assignment4_result/results/Q2_HDR/tonemapped_matlab/gaussian_raw_linear.jpg)
-
-
-
-
-**Figure 4-(4): Raw, Logarithmic, Uniform**
-![Alt text](/assignment4_result/results/Q2_HDR/tonemapped_matlab/uniform_raw_logarithmic.jpg)
-
-
-
-
-**Figure 4-(5): Raw, Logarithmic, Tent**
-![Alt text](/assignment4_result/results/Q2_HDR/tonemapped_matlab/tent_raw_logarithmic.jpg)
-
-
-
-
-**Figure 4-(6): Raw, Logarithmic, Gaussian**
-![Alt text](/assignment4_result/results/Q2_HDR/tonemapped_matlab/gaussian_raw_logarithmic.jpg)
-
-
-
-
-**Figure 4-(7): Rendered, Linear, Uniform**
-![Alt text](/assignment4_result/results/Q2_HDR/tonemapped_matlab/uniform_rendered_linear.jpg)
-
-
-
-
-**Figure 4-(8): Rendered, Linear, Tent**
-![Alt text](/assignment4_result/results/Q2_HDR/tonemapped_matlab/tent_rendered_linear.jpg)
-
-
-
-
-**Figure 4-(9): Rendered, Linear, Gaussian**
-![Alt text](/assignment4_result/results/Q2_HDR/tonemapped_matlab/gaussian_rendered_linear.jpg)
-
-
-
-
-**Figure 4-(10): Rendered, Logarithmic, Uniform**
-![Alt text](/assignment4_result/results/Q2_HDR/tonemapped_matlab/uniform_rendered_logarithmic.jpg)
-
-
-
-
-**Figure 4-(11): Rendered, Logarithmic, Tent**
-![Alt text](/assignment4_result/results/Q2_HDR/tonemapped_matlab/tent_rendered_logarithmic.jpg)
-
-
-
-
-**Figure 4-(12): Rendered, Logarithmic, Gaussian**
-![Alt text](/assignment4_result/results/Q2_HDR/tonemapped_matlab/gaussian_rendered_logarithmic.jpg)
-
-
-
-#### Sub Q3. Evaluation (10 pts)
-After merging exposure stacks to HDR images, I evaluated the quality of HDR merging scheme by measuring its linearity of luminance value. Utilizing patches 4, 8, 12, 16, 20 and 24 of color checkers, I got log luminance intensity of each patch. The results of linear regression are shown in **figure 5**. Every case shows meaningful R-squared value which indicates the error of regression result. Logarithmic merging scheme shows better results in both qualitative and quantitative evaluations.
-
-
-**Figure 5: Linear regression results**
-![Alt text](/assignment4_result/results/Q2_HDR/linear_regression.png)
-
-
-
-
-### Q2. Tonemapping (50 pts)
-#### Sub Q1. Photographic tonemapping (20 pts)
-  Following given equation which is shown below, I got two photographic tonemapped images. First one is tonemapped channelwisely in RGB colorspace. Second one is tonemapped using only Y channel in xyY colorspace. In my view, photographic tonemapping using `RGB colorspace` is better than `xyY colorspace`. `xyY colorspace` tonemapping somehow changed white balance of the image which makes image unreal. Parameters are shown below.
+#### Sub Q4. All-focus image and depth from defocus (35 pts)
+  To get all-focus image, I weighted summed all focal stack. The weight used to merge all focal stack can be acquired using the fact that focused area has sharp image. Following the procedure written below, I could get all-focused image. Also, I used the parameters which are shown below for gaussian kernel.
 ```MATLAB
-% Parameters for RGB tonemapping
-K_p = 0.8;
-B_p = 0.9;
-
-% Parameters for xyY tonemapping
-K_y = 0.2;
-B_y = 0.9;
+% params
+sigma_1 = 10;
+sigma_2 = 3;
 ```
+
+![Alt text](/assignment5_result/results/Q4_all_focusing_depth/equation_1.png)
+
+
   
   
 ![Alt text](/assignment4_result/results/Q3_tonemap/formula.png)
