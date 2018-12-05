@@ -40,7 +40,7 @@ I didn not add whole code to this report because of limited space.
 
 
 #### Sub Q4. All-focus image and depth from defocus (35 pts)
-  To get all-focus image, I weighted summed all focal stack. The weight used to merge all focal stack can be acquired using the fact that focused area has sharp image. Following the procedure written below, I could get all-focused image. Also, I used the parameters which are shown below for gaussian kernel.
+  To get all-focus image, I weighted summed all focal stack. The weight used to merge all focal stack can be acquired using the fact that focused area has sharp image. Following the procedure written below, I could get all-focused image **Fig. 3**. Also, I used the parameters which are shown below for gaussian kernel.
 ```MATLAB
 % params
 sigma_1 = 10;
@@ -50,46 +50,16 @@ sigma_2 = 3;
 ![Alt text](/assignment5_result/results/Q4_all_focusing_depth/equation_1.png)
 
 
-  
-  
-![Alt text](/assignment4_result/results/Q3_tonemap/formula.png)
-
-**Figure 6: Tonemapped images**
-![Alt text](/assignment4_result/results/Q3_tonemap/figure.png)
+**Figure 3: All-focused images**
 
 
-**Figure 7: Tonemapped images-RGB**
-![Alt text](/assignment4_result/results/Q3_tonemap/photo_rgb.png)
+![Alt text](/assignment5_result/results/Q4_all_focusing_depth/all_focus.png)
 
 
-**Figure 8: Tonemapped images-xyY**
-![Alt text](/assignment4_result/results/Q3_tonemap/photo_xyY.png)
+ To get depth map, I weighted summed depth. The weight used to merge depth is same as the weight used to create all-focused image. **Fig. 4** shows the result of depth image.
+ 
+ 
+ **Figure 4: Depth images**
 
 
-
-#### Sub Q2. Bilateral tonemapping (20 pts)
-  Following given equation which is shown below, I got two photographic tonemapped images. First one is tonemapped channelwisely in `RGB colorspace`. Second one is tonemapped using only Y channel in `xyY colorspace`. Bilateral tonemapping in `RGB colorspace` show more smoothed result in color than photographical tonemapping. As it uses bilateral filter, the edge is encouraged which makes image more clear. `xyY colorspace` shows saturated result. In this method, I prefer `RGB colorspace` tonemapping result than `xyY colorspace` tonemapping result. Parameters are shown below.
-  ``` MATLAB
-% Parameters for RGB
-S_rgb = 0.15;
-sigma_spatial_rgb = 1;
-sigma_intensity_rgb = 0.1;
-kernel_size_rgb = 5;
-
-% Parameters for xyY
-S_xyY = 0.17;
-sigma_spatial_xyY = 1;
-sigma_intensity_xyY = 0.1;
-kernel_size_xyY = 5;
-```
-
-**Figure 9: Tonemapped images**
-![Alt text](/assignment4_result/results/Q3_tonemap/figure_bilateral.png)
-
-
-**Figure 10: Tonemapped images-RGB**
-![Alt text](/assignment4_result/results/Q3_tonemap/bilateral_rgb.png)
-
-
-**Figure 11: Tonemapped images-xyY**
-![Alt text](/assignment4_result/results/Q3_tonemap/bilateral_xyY.png)
+![Alt text](/assignment5_result/results/Q4_all_focusing_depth/depth.png)
