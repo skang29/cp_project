@@ -11,12 +11,12 @@ I didn not add whole code to this report because of limited space.
   The goal of this work is to preprocess a image which is acquired using plenoptic camera to 5D light field matrix L(u, v, s, t, c). After re-ordering pixels to L(u, v, s, t, c), I could get each pinhole image(sub-aperture view image) which can be expressed by L(u=u0, v=v0, s, t, c). **Fig. 1** shows each pinhole images in 16 by 16 grid view. The image is resized with resize ratio 0.4 due to size limit of github.
   
 **Figure 1: Sub-aperture view**
-![Alt text](/assignment4_result/results/Q2_sub_aperture_views/result.png)
+![Alt text](/assignment5_result/results/Q2_sub_aperture_views/result.png)
 
 
 #### Sub Q3. Refocusing and focal-stack generation (40 pts)
   To get a focused image using L(u, v, s, t, c), I used equation shown below. The equation shows that summing shifted light field matrix along (s, t) axes can generate a focused image.
-![Alt text](/assignment4_result/results/Q3_refocusing/equation_1.png)
+![Alt text](/assignment5_result/results/Q3_refocusing/equation_1.png)
 
 Merged exposure stacks have 12 types: 2 sets of images (RAW and rendered) x 2 merging schemes(linear and logarithmic) x 3 weighting schemes (uniform, tent, Gaussian). I post-processed using `MATLAB` **tonemap** function. In rendered images, some of cases show noisy results. I presume that the reason of noise value is due to clipping saturated value in `Sub Q1`. In my view, logarithmic merging scheme shows better results than linear merging scheme.
 
