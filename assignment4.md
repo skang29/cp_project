@@ -1,49 +1,23 @@
 ## You can find whole code from here
 
-https://github.com/skang29/cp_project/tree/master/assignment4_result
+https://github.com/skang29/cp_project/tree/master/assignment5_result
 
 I didn not add whole code to this report because of limited space.
 
+## Assignment 5
+### Q1. Light field rendering, focal stacks, and depth from defocus (100 pts)
+#### Sub Q1. Initials (5 pts), Sub Q2. Sub-aperture views (20 pts)
 
-## Preliminary: Convert nef to tiff image using Python
-```Python
-import rawpy
-import imageio
-
-
-for i in range(16):
-    with rawpy.imread("exposure{}.nef".format(i+1)) as raw:
-        rgb = raw.postprocess(output_color=rawpy.ColorSpace.sRGB, use_camera_wb=True, output_bps=16, demosaic_algorithm=rawpy.DemosaicAlgorithm.LINEAR, no_auto_bright=True)
-        imageio.imsave("results/exposure{}.tiff".format(i+1), rgb)
-```
+  The goal of this work is to preprocess a image which is acquired using plenoptic camera to 5D light field matrix L(u, v, s, t, c). After re-ordering pixels to L(u, v, s, t, c), I could get each pinhole image(sub-aperture view image) which can be expressed by L(u=u0, v=v0, s, t, c). **Fig. 1** shows each pinhole images in 16 by 16 grid view. The image is resized with resize ratio 0.4 due to size limit of github.
+  
+**Figure 1: Sub-aperture view**
+![Alt text](/assignment4_result/results/Q2_sub_aperture_views/result.png)
 
 
-## Assignment 4
-### Q1. HDR Imaging (50 pts)
-#### Sub Q1. Linearize rendered images (25 pts)
+#### Sub Q3. Refocusing and focal-stack generation (40 pts)
+  To get a focused image using L(u, v, s, t, c), I used equation shown below. The equation shows that summing shifted light field matrix along (s, t) axes can generate a focused image.
+![Alt text](/assignment4_result/results/Q3_refocusing/equation_1.png)
 
-  The goal of this work is to linearize rendered image which is non-linear. Before merging images to HDR image, it is necessary to linearize rendered image. To achieve inverse function which linearize non-linear image, I made least squares optimization problem.
-
-<img src="https://latex.codecogs.com/gif.latex?\min_{g,L_{ij}}&space;\sum_{i,&space;j}&space;\sum_{k}&space;w(I_{ij}^{k})[g(I_{ij}^{k})&space;-&space;log(L_{ij})&space;-&space;log(t^k))]^2&space;&plus;&space;\lambda&space;\sum_{z=0}^{255}&space;w(z)&space;(\nabla^2&space;g(z))^2" title="\min_{g,L_{ij}} \sum_{i, j} \sum_{k} w(I_{ij}^{k})[g(I_{ij}^{k}) - log(L_{ij}) - log(t^k))]^2 + \lambda \sum_{z=0}^{255} w(z) (\nabla^2 g(z))^2" />
-
-  To achieve optimal `g` curve, I clipped image range to `Zmin` to `Zmax`. I found that adding one condition which is `g(Zmax - 1) = 1` to LS optimization problem results better `g` curve. If I use `g(Zmax) = 1` instead of  `g(Zmax - 1) = 1`, the `g` curve is suppressed to have lower value except `g(Zmax)`. Also, I set `g` values which x is smaller than `Zmin` to zero and the values which x is larger than `Zmax-1` to `g(Zmax-1)`. 
-
-  I chose 1,000 for `lambda`, which strongly enforces the g curve to be smooth. **Figure 1, 2, 3** shows each `g` curve and `exp(g)` curve using `uniform, tent, gaussian` weight scheme for each color channels, respectively. Except linear weight scheme, `g` curve are monotonically increasing function which is considerably smooth. Linear weight scheme uses whole range of image pixels which makes sensitive to saturated values.
-
-**Figure 1: Uniform**
-![Alt text](/assignment4_result/results/Q1_Linearization/uniform.png)
-
-
-**Figure 2: Tent**
-![Alt text](/assignment4_result/results/Q1_Linearization/tent.png)
-
-
-**Figure 3: Gaussian**
-![Alt text](/assignment4_result/results/Q1_Linearization/gaussian.png)
-
-
-
-#### Sub Q2. Merge exposure stack into HDR image (15 pts)
 Merged exposure stacks have 12 types: 2 sets of images (RAW and rendered) x 2 merging schemes(linear and logarithmic) x 3 weighting schemes (uniform, tent, Gaussian). I post-processed using `MATLAB` **tonemap** function. In rendered images, some of cases show noisy results. I presume that the reason of noise value is due to clipping saturated value in `Sub Q1`. In my view, logarithmic merging scheme shows better results than linear merging scheme.
 
 **Figure 4-(1): Raw, Linear, Uniform**
