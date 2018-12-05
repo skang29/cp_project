@@ -18,6 +18,18 @@ I didn not add whole code to this report because of limited space.
   To get a focused image using L(u, v, s, t, c), I used equation shown below. The equation shows that summing shifted light field matrix along (s, t) axes can generate a focused image.
 ![Alt text](/assignment5_result/results/Q3_refocusing/equation_1.png)
 
+  **Fig. 2** shows several focused images.
+  
+**Figure 2: Focused images**
+![Alt text](/assignment5_result/results/Q3_refocusing/06_d(-4).png)
+![Alt text](/assignment5_result/results/Q3_refocusing/10_d(0).png)
+![Alt text](/assignment5_result/results/Q3_refocusing/14_d(4).png)
+![Alt text](/assignment5_result/results/Q3_refocusing/18_d(8).png)
+![Alt text](/assignment5_result/results/Q3_refocusing/22_d(12).png)
+![Alt text](/assignment5_result/results/Q3_refocusing/26_d(16).png)
+![Alt text](/assignment5_result/results/Q3_refocusing/30_d(20).png)
+![Alt text](/assignment5_result/results/Q3_refocusing/34_d(24).png)
+
 Merged exposure stacks have 12 types: 2 sets of images (RAW and rendered) x 2 merging schemes(linear and logarithmic) x 3 weighting schemes (uniform, tent, Gaussian). I post-processed using `MATLAB` **tonemap** function. In rendered images, some of cases show noisy results. I presume that the reason of noise value is due to clipping saturated value in `Sub Q1`. In my view, logarithmic merging scheme shows better results than linear merging scheme.
 
 **Figure 4-(1): Raw, Linear, Uniform**
